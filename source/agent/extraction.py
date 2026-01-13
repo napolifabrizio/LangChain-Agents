@@ -18,7 +18,7 @@ vendidas,[21] em 1977 a empresa conseguiu o aporte de Mike Markkula e um emprés
 class Event(BaseModel):
     # '''Informação sobre um acontecimento'''
     date: str = Field(description='Data do acontecimento no formato YYYY-MM-DD')
-    event: str = Field(description='Acontecimento ecxtraído do texto')
+    event: str = Field(description='Acontecimento extraído do texto')
 
 class Events(BaseModel):
     # """Acontecimentos para extração"""
