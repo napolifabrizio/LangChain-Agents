@@ -77,3 +77,6 @@ chain = (
 res = chain.invoke({'input': 'What are you able to do?'})
 
 print(res)
+
+# Documentação das tools padrões da lib LangChain
+# https://docs.langchain.com/oss/python/integrations/providers/overview
