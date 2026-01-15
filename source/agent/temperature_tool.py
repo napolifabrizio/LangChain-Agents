@@ -69,4 +69,4 @@ chain = (
 )
 
 res = chain.invoke({"input": "Qual é a temperatura atual de Anil no Brasil em Rio de Janeiro?"})
-print(res)
+# print(res)
