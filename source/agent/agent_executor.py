@@ -52,9 +52,9 @@ pass_through = RunnablePassthrough.assign(
 
 prompt = ChatPromptTemplate.from_messages([
     ('system', 'Você é um assistente amigável chamado Isaac'),
+    MessagesPlaceholder(variable_name='chat_history'),
     ('user', '{input}'),
     MessagesPlaceholder(variable_name='agent_scratchpad'),
-    MessagesPlaceholder(variable_name='chat_history')
 ])
 
 agent_chain = pass_through | prompt | chat.bind(functions=json_tools) | OpenAIFunctionsAgentOutputParser()
@@ -71,6 +71,8 @@ agent_executor = AgentExecutor(
     # verbose=True
 )
 
-print(agent_executor.invoke({"input": "Olá, meu nome é fabrizio"}))
-print(agent_executor.invoke({"input": "Olá, qual é meu nome?"}))
-print(agent_executor.invoke({"input": "Olá, qual a temperatura em São Paulo?"}))
+# print(agent_executor.invoke({"input": "Olá, meu nome é fabrizio"})["output"])
+# print(agent_executor.invoke({"input": "Olá, qual é meu nome?"})["output"])
+# print(agent_executor.invoke({"input": "Olá, qual a temperatura em São Paulo?"})["output"])
+
+# print(prompt.model_json_schema())
